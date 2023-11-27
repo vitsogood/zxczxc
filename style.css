@@ -1,0 +1,307 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #190918;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.container{
+    width: 100px;
+    height: 300px;
+    /* background-color: yellowgreen; */
+    transform: scale(0.6);
+}
+.container div{
+    position: absolute;
+}
+.container .glass{
+    width: 420px;
+    height: 420px;
+    border: 3px solid rgba(255,255,255,0.5);
+    border-radius: 300px;
+    border-bottom: 15px solid rgba(255,255,255,0.5);
+    left: -160px;
+    top: -120px;
+    
+}
+.container .glass::before{
+    width: 8px;
+    height: 100px;
+    position: absolute;
+    background: rgba(255,255,255,0.1);
+    content: '';
+    top: 180px;
+    left: 20px;
+}
+.container .glow{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #F594B8;
+    transform: rotate(45deg);
+    transform-origin: center;
+    top: -2px;
+    opacity: 0.2;
+    box-shadow: 5px 5px 5px 5px #F594B8;
+    transition: all 0.5s ease;
+    animation: glowing 2.5s ease-in-out infinite;
+}
+.container .glow::before{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #F594B8;
+    border-radius: 50%;
+    top: -62px;
+    left: 1px;
+    box-shadow: 5px 5px 5px 5px #F594B8;
+    transition: all 0.5s ease;
+    animation: glowing 2.5s ease-in-out infinite;
+}
+.container .glow::after{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #F594B8;
+    border-radius: 50%;
+    top: 0px;
+    left: -64px;
+    box-shadow: 5px 5px 5px 5px #F594B8;
+    transition: all 0.5s ease;
+    animation: glowing 2.5s ease-in-out infinite;
+}
+.container .rose-petals > div{
+    background: #D52D58;
+    width: 45px;
+    height: 80px;
+    position: absolute;
+    transition: all 0.5s ease-out;
+}
+.container .rose-petals > div:nth-child(1){
+    border-radius: 15px;
+    left: 20px;
+    top: -6px;
+    background-color: #D52D58;
+}
+.container .rose-petals > div:nth-child(2), .container .rose-petals > div:nth-child(4), .container .rose-petals > div:nth-child(6){
+    border-radius: 0px 30px 0px 30px;
+    background-color: #B81B43;
+    left: 0;
+    transform-origin: bottom right;
+
+}
+.container .rose-petals > div:nth-child(3), .container .rose-petals > div:nth-child(5), .container .rose-petals > div:nth-child(7){
+    border-radius: 0px 30px 0px 30px;
+    /* background-color: #B81B43; */
+    left: 40px;
+    transform-origin: bottom left;
+
+}
+.container .rose-petals > div:nth-child(2){
+    animation: openRose2 3s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 5;
+    background-color: #9e183a;
+    top: 10px;
+    height: 70px;
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(3){
+    animation: openRose3 3s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 4;
+    background-color: #9e183a;
+    top: 10px;
+    height: 70px;
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(4){
+    animation: openRose4 3s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 3;
+    background-color: #B81B43;
+    top: 5px;
+    height: 75px;
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(5){
+    animation: openRose5 3s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 2;
+    background-color: #B81B43;
+    top: 5px;
+    height: 75px;
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(6){
+    animation: openRose6 3s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 1;
+    background-color: #C9204B;
+    top: "";
+    height: "";
+    animation-delay: 2s;
+}
+.container .rose-petals > div:nth-child(7){
+    animation: openRose6 3s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 1;
+    background-color: #C9204B;
+    top: "";
+    height: "";
+    animation-delay: 2s;
+}
+.container .rose-leaves > div:nth-child(1){
+    width: 55px;
+    height: 30px;
+    background-color: #338f37;
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    border-radius: 100px;
+}
+.container .rose-leaves > div:nth-child(1){
+    width: 6px;
+    height: 100px;
+    background-color: #338f37;
+    position: absolute;  
+    top: 80px;
+    left: 40px;
+    /* border-radius: 100px; */
+}
+.container .sparkles{
+    bottom: -10px;
+}
+.container .sparkles > div{
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    background-color: yellow;
+    bottom: 0;
+    opacity: 0;
+    animation: sparkle 4s ease-in-out infinite;
+}
+.container .sparkles > div:nth-child(1){
+    left: 60px;
+    animation-delay: 3s;
+}
+.container .sparkles > div:nth-child(2){
+    left: 158x;
+    animation-delay: 1s;
+}
+.container .sparkles > div:nth-child(3){
+    left: -22px;
+    animation-delay: 3s;
+}
+.container .sparkles > div:nth-child(4){
+    left: 10px;
+    animation-delay: 2s;
+}
+.container .sparkles > div:nth-child(5){
+    left: 177px;
+    animation-delay: 1s;
+}
+.container .sparkles > div:nth-child(6){
+    left: 82px;
+    animation-delay: 2s;
+}
+.container .sparkles > div:nth-child(7){
+    left: 45px;
+    animation-delay: 2s;
+}
+.container .sparkles > div:nth-child(8){
+    left: 74px;
+    animation-delay: 3s;
+}
+.container .sparkles > div:nth-child(9){
+    left: -79px;
+    animation-delay: 3s;
+}
+.container .content {
+    position: absolute;
+    top: 80%; /* Adjusted to move the text a little lower */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    font-size: 25px;
+    animation: glow 1s ease-in-out infinite alternate;
+    white-space: nowrap;
+}
+
+
+@keyframes sparkle {
+    50%{
+        opacity: 1;
+    }
+    100%{
+        bottom: 250px;
+    }
+}
+
+
+
+
+
+
+
+@keyframes openRose5 {
+    100%{
+        -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+}
+@keyframes openRose4 {
+    100%{
+        -moz-transform: rotate(-30deg);
+        -ms-transform: rotate(-30deg);
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+    }
+}
+@keyframes openRose3 {
+    100%{
+        -moz-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg);
+    }
+}
+@keyframes openRose2 {
+    50%{
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        top: 180px;
+        left: -40px;
+    }
+    100%{
+        -moz-transform: rotate(-60deg);
+        -ms-transform: rotate(-60deg);
+        -webkit-transform: rotate(-60deg);
+        transform: rotate(-60deg);
+        top: 180px;
+        left: -40px;
+    }
+}
+
+@keyframes glowing {
+    50%{
+        box-shadow: 10px 10px 10px 20px #F594B8;
+    }
+}
+@keyframes glow {
+    from{
+        text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #E60073, 0 0 40px #E60073, 0 0 50px #E60073, 0 0 60px #E60073, 0 0 70px #E60073 ;
+    }
+    to{
+        text-shadow: 0 0 20px #FFF, 0 0 30px #FF4DA6, 0 0 40px #FF4DA6, 0 0 50px #FF4DA6, 0 0 60px #FF4DA6, 0 0 70px #FF4DA6, 0 0 80px #FF4DA6 ;
+    }
+}

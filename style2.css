@@ -1,0 +1,17 @@
+body {
+    background-color: #190918!important;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* In your style2.css */
+form .custom-input {
+    width: 300px; /* Set the desired width */
+}
+.text1{
+    color: #FFF;
+}
